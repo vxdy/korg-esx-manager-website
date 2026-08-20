@@ -1,0 +1,13 @@
+{
+  "name": "Open Electribe Editor",
+  "short_name": "Electribe Editor",
+  "description": "Free, open-source desktop editor for Korg Electribe .esx files.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#101217",
+  "theme_color": "#101217",
+  "icons": [
+    { "src": "/assets/img/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/img/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

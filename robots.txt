@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vxdy.github.io/open-electribe-editor-site/sitemap.xml

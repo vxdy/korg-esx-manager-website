@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<!-- SITE_BASE_URL placeholder: https://vxdy.github.io/open-electribe-editor-site/ — bei Repo-Umbenennung oder eigener Domain überall anpassen (siehe README.md). -->
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Open Electribe Editor — Kostenloser Korg Electribe .esx Datei-Editor</title>
+<meta name="description" content="Open Electribe Editor ist ein kostenloser, quelloffener Desktop-Editor für Windows &amp; macOS zum Bearbeiten von Korg-Electribe-.esx-Dateien: Patterns, Samples, Songs und globale Parameter — außerhalb des Geräts." />
+<link rel="canonical" href="https://vxdy.github.io/open-electribe-editor-site/de/" />
+<link rel="alternate" hreflang="en" href="https://vxdy.github.io/open-electribe-editor-site/" />
+<link rel="alternate" hreflang="de" href="https://vxdy.github.io/open-electribe-editor-site/de/" />
+<link rel="alternate" hreflang="x-default" href="https://vxdy.github.io/open-electribe-editor-site/" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Open Electribe Editor" />
+<meta property="og:title" content="Open Electribe Editor — Kostenloser Korg Electribe .esx Datei-Editor" />
+<meta property="og:description" content="Bearbeite Korg-Electribe-Patterns, -Samples, -Songs und globale Parameter am PC oder Mac. Kostenlos, quelloffen, mit .esxpat Pattern-Export/-Import." />
+<meta property="og:url" content="https://vxdy.github.io/open-electribe-editor-site/de/" />
+<meta property="og:image" content="https://vxdy.github.io/open-electribe-editor-site/assets/img/og-image-de.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale" content="de_DE" />
+<meta property="og:locale:alternate" content="en_US" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Open Electribe Editor — Kostenloser Korg Electribe .esx Datei-Editor" />
+<meta name="twitter:description" content="Kostenloser, quelloffener Desktop-Editor für Korg-Electribe-.esx-Dateien: Patterns, Samples, Songs &amp; globale Parameter." />
+<meta name="twitter:image" content="https://vxdy.github.io/open-electribe-editor-site/assets/img/og-image-de.png" />
+
+<meta name="theme-color" content="#101217" />
+<link rel="icon" href="/favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16.png" />
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+<link rel="manifest" href="/manifest.webmanifest" />
+<link rel="stylesheet" href="/assets/css/style.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Open Electribe Editor",
+  "alternateName": "Open Korg ESX Sample Manager",
+  "description": "Kostenloser, quelloffener Desktop-Editor für Korg-Electribe-.esx-Dateien: Patterns, Samples, Songs und globale Parameter außerhalb des Geräts ansehen und bearbeiten, Patterns per .esxpat austauschen.",
+  "url": "https://vxdy.github.io/open-electribe-editor-site/de/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows, macOS, Linux",
+  "softwareVersion": "Siehe GitHub Releases",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "downloadUrl": "https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/releases/latest",
+  "codeRepository": "https://github.com/vxdy/Open-Korg-ESX-Sample-Manager",
+  "license": "https://github.com/vxdy/Open-Korg-ESX-Sample-Manager",
+  "author": {
+    "@type": "Person",
+    "name": "vxdy",
+    "url": "https://github.com/vxdy"
+  },
+  "inLanguage": "de"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was ist eine Korg-Electribe-.esx-Datei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die .esx-Datei ist das Projektformat der Korg-Electribe-Workstations. Sie enthält Patterns, Samples, Songs und globale Parameter. Open Electribe Editor liest und schreibt dieses Format auf deinem Computer, außerhalb des Geräts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist Open Electribe Editor kostenlos und quelloffen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Der vollständige Quellcode ist auf GitHub verfügbar, und fertige Windows-Builds werden kostenlos auf der Releases-Seite des Projekts veröffentlicht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Welche Betriebssysteme werden unterstützt?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Windows und macOS sind getestet. Für Windows gibt es eine fertige .exe; auf macOS wird die App aus dem Quellcode mit Python gestartet. Unter Linux mit installiertem PyQt6 und PortAudio sollte es ebenfalls laufen, ist aber nicht offiziell getestet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Muss ich Python installieren, um die App zu nutzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Unter Windows nicht, wenn du die fertige OpenElectribeEditor.exe von der Releases-Seite nutzt. Für den Start aus dem Quellcode unter Windows, macOS oder Linux wird Python 3.11 oder neuer benötigt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist eine .esxpat-Datei?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das ist das Format, mit dem Open Electribe Editor ein einzelnes Pattern samt referenzierter Samples exportiert, um es zwischen .esx-Projekten auszutauschen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich eigene WAV-Samples importieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Im Samples-Tab lassen sich WAV-Dateien importieren, optional mit automatischer Mono-Konvertierung, per eingebautem Player und Wellenform-Anzeige vorhören, und einzelne oder ungenutzte Samples löschen."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="/de/">
+      <img src="/assets/img/icon-192.png" alt="" width="32" height="32" />
+      Open Electribe Editor
+    </a>
+    <nav class="primary-nav" aria-label="Hauptnavigation">
+      <a href="#features">Funktionen</a>
+      <a href="#screens">Ansichten</a>
+      <a href="#install">Installation</a>
+      <a href="#faq">FAQ</a>
+      <a href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager">GitHub</a>
+    </nav>
+    <div class="nav-actions">
+      <div class="lang-switch">
+        <a href="/">EN</a>
+        <a href="/de/" aria-current="page">DE</a>
+      </div>
+      <a class="btn btn-primary btn-small" href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/releases/latest">Download</a>
+      <button class="menu-toggle" aria-label="Menü umschalten" aria-expanded="false">&#9776;</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Kostenlos &amp; Open Source</span>
+      <h1>Bearbeite deine Korg-Electribe-<span class="accent">.esx-Dateien</span> direkt am Computer</h1>
+      <p class="lead">
+        Open Electribe Editor ist eine plattformunabhängige Desktop-App zum Durchsuchen, Bearbeiten und
+        Organisieren von Electribe-Patterns, -Samples, -Songs und globalen Parametern — ohne das Gerät anzufassen.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/releases/latest">Für Windows herunterladen</a>
+        <a class="btn btn-secondary" href="#install">Aus dem Quellcode starten (macOS / Linux)</a>
+      </div>
+      <p class="hero-meta">Kein Account nötig, keine Installations-Telemetrie erforderlich · Hobby-Projekt auf GitHub</p>
+      <div class="platforms">
+        <span class="chip">Windows-.exe-Build</span>
+        <span class="chip">macOS aus dem Quellcode</span>
+        <span class="chip">Linux (PyQt6/PortAudio)</span>
+        <span class="chip">Dunkles UI-Theme</span>
+      </div>
+
+      <div class="hero-shot">
+        <span class="mockup-tag">UI-Vorschau — Mockup, kein echter Screenshot</span>
+        <img src="/assets/img/mockup-hero.png" width="1400" height="900" loading="eager"
+             alt="Mockup des Patterns-Tabs von Open Electribe Editor mit Pattern-Liste und Step-Grid in dunkler Oberfläche" />
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="alt-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Funktionen</span>
+        <h2>Alles, was eine .esx-Datei enthält, in einem Editor</h2>
+        <p>Sechs Tabs decken den kompletten Inhalt einer Electribe-Projektdatei ab, dazu ein Datei-Explorer und ein Pattern-Browser zur Verwaltung deiner Bibliothek.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon">&#9432;</div>
+          <h3>Info-Tab</h3>
+          <p>Übersicht über Dateistatistiken: genutzte Patterns, Samples und Songs sowie belegter Sample-Speicher.</p>
+        </div>
+        <div class="card">
+          <div class="icon">&#9881;</div>
+          <h3>Global-Tab</h3>
+          <p>Bearbeite die globalen Parameter der .esx-Datei direkt, ohne dich durch Gerätemenüs zu klicken.</p>
+        </div>
+        <div class="card">
+          <div class="icon">&#9638;</div>
+          <h3>Patterns-Tab</h3>
+          <p>Patterns anzeigen und bearbeiten. Einzelne Patterns inkl. referenzierter Samples als .esxpat exportieren oder importieren, um sie zwischen Projekten auszutauschen.</p>
+        </div>
+        <div class="card">
+          <div class="icon">&#9834;</div>
+          <h3>Samples-Tab</h3>
+          <p>WAV-Samples importieren, optional mit automatischer Mono-Konvertierung, Wellenform ansehen, per eingebautem Player vorhören und einzelne oder ungenutzte Samples löschen.</p>
+        </div>
+        <div class="card">
+          <div class="icon">&#9835;</div>
+          <h3>Songs-Tab</h3>
+          <p>Die in deiner Projektdatei gespeicherten Songs anzeigen und bearbeiten.</p>
+        </div>
+        <div class="card">
+          <div class="icon">&#128193;</div>
+          <h3>Datei-Explorer &amp; Pattern-Browser</h3>
+          <p>Eine andockbare Seitenleiste zum Navigieren im Dateisystem und Öffnen von .esx-/.wav-/.mp3-/.aiff-Dateien, plus ein Browser zur Verwaltung exportierter Patterns.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="screens">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Oberfläche</span>
+        <h2>Ein dunkler, fokussierter Arbeitsbereich</h2>
+        <p>Die folgenden Mockups zeigen den im README beschriebenen Tab-Aufbau. Echte Screenshots ersetzen diese Platzhalter, sobald sie veröffentlicht sind — die aktuelle Oberfläche findest du im GitHub-Repository.</p>
+      </div>
+      <div class="showcase">
+        <figure>
+          <img src="/assets/img/mockup-patterns.png" width="1200" height="760" loading="lazy"
+               alt="Mockup des Patterns-Tabs mit Pattern-Liste links und Step-Grid rechts" />
+          <figcaption><strong>Patterns-Tab</strong>Patterns ansehen, bearbeiten und Schritt für Schritt durchgehen; einzelne Patterns als .esxpat exportieren/importieren.</figcaption>
+        </figure>
+        <figure>
+          <img src="/assets/img/mockup-samples.png" width="1200" height="760" loading="lazy"
+               alt="Mockup des Samples-Tabs mit Sample-Liste, Wellenform-Anzeige und Transport-Steuerung" />
+          <figcaption><strong>Samples-Tab</strong>WAV-Dateien importieren, Wellenformen vorhören und ungenutzte Samples aufräumen.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="alt-bg">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">Loslegen</span>
+        <h2>Open Electribe Editor installieren</h2>
+        <p>Für den Start aus dem Quellcode wird Python 3.11+ benötigt. Fertige Binaries gibt es aktuell nur für Windows.</p>
+      </div>
+
+      <div class="install-tabs" role="tablist" aria-label="Installationsmethode">
+        <button role="tab" aria-selected="true" data-target="tab-win-exe">Windows (.exe)</button>
+        <button role="tab" aria-selected="false" data-target="tab-win-src">Windows (Quellcode)</button>
+        <button role="tab" aria-selected="false" data-target="tab-mac-src">macOS (Quellcode)</button>
+      </div>
+
+      <div id="tab-win-exe" class="install-panel active" role="tabpanel">
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>Releases-Seite öffnen</h3>
+            <p>Gehe zum Reiter <a href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/releases">Releases</a> auf GitHub und lade die neueste <code>OpenElectribeEditor.exe</code> herunter.</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>Oder einen CI-Build laden</h3>
+            <p>Alternativ: <a href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/actions">Actions</a> → neuester erfolgreicher Lauf von <em>Build Windows EXE</em> → Artifact <code>OpenElectribeEditor-windows-exe</code> herunterladen (erfordert GitHub-Login).</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>Starten</h3>
+            <p>Artifact bei Bedarf entpacken und <code>OpenElectribeEditor.exe</code> direkt starten — es ist keine Python-Installation nötig.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="tab-win-src" class="install-panel" role="tabpanel">
+        <pre class="code"><span class="cmt"># Repository klonen</span>
+git clone https://github.com/vxdy/Open-Korg-ESX-Sample-Manager.git
+cd Open-Korg-ESX-Sample-Manager
+
+<span class="cmt"># Virtuelle Umgebung anlegen und aktivieren</span>
+python -m venv venv
+venv\Scripts\activate
+
+<span class="cmt"># Abhängigkeiten installieren</span>
+pip install -r requirements.txt
+
+<span class="cmt"># Anwendung starten</span>
+python main.py</pre>
+      </div>
+
+      <div id="tab-mac-src" class="install-panel" role="tabpanel">
+        <pre class="code"><span class="cmt"># Repository klonen</span>
+git clone https://github.com/vxdy/Open-Korg-ESX-Sample-Manager.git
+cd Open-Korg-ESX-Sample-Manager
+
+<span class="cmt"># Virtuelle Umgebung anlegen und aktivieren</span>
+python3 -m venv venv
+source venv/bin/activate
+
+<span class="cmt"># Abhängigkeiten installieren</span>
+pip install -r requirements.txt
+
+<span class="cmt"># Anwendung starten</span>
+python3 main.py
+
+<span class="cmt"># Falls sounddevice PortAudio nicht findet:</span>
+brew install portaudio</pre>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">FAQ</span>
+        <h2>Häufige Fragen</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Was ist eine Korg-Electribe-.esx-Datei?</summary>
+          <p>Die .esx-Datei ist das Projektformat der Korg-Electribe-Workstations. Sie enthält Patterns, Samples, Songs und globale Parameter. Open Electribe Editor liest und schreibt dieses Format auf deinem Computer, außerhalb des Geräts.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Ist Open Electribe Editor kostenlos und quelloffen?</summary>
+          <p>Ja. Der vollständige Quellcode ist auf GitHub verfügbar, und fertige Windows-Builds werden kostenlos auf der Releases-Seite des Projekts veröffentlicht.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Welche Betriebssysteme werden unterstützt?</summary>
+          <p>Windows und macOS sind getestet. Für Windows gibt es eine fertige .exe; auf macOS wird die App aus dem Quellcode mit Python gestartet. Unter Linux mit installiertem PyQt6 und PortAudio sollte es ebenfalls laufen, ist aber nicht offiziell getestet.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Muss ich Python installieren, um die App zu nutzen?</summary>
+          <p>Unter Windows nicht, wenn du die fertige OpenElectribeEditor.exe von der Releases-Seite nutzt. Für den Start aus dem Quellcode unter Windows, macOS oder Linux wird Python 3.11 oder neuer benötigt.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Was ist eine .esxpat-Datei?</summary>
+          <p>Das ist das Format, mit dem Open Electribe Editor ein einzelnes Pattern samt referenzierter Samples exportiert, um es zwischen .esx-Projekten auszutauschen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Kann ich eigene WAV-Samples importieren?</summary>
+          <p>Ja. Im Samples-Tab lassen sich WAV-Dateien importieren, optional mit automatischer Mono-Konvertierung, per eingebautem Player und Wellenform-Anzeige vorhören, und einzelne oder ungenutzte Samples löschen.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Sendet die App Daten über das Netzwerk?</summary>
+          <p>Unter Help → Sende Debug Daten kannst du steuern, ob Debug-/Fehlerberichte an einen Debug-Server gesendet werden, um bei der Fehlersuche während der Entwicklung zu helfen. Das ist eine Einstellung, die du im Help-Menü selbst kontrollierst.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Bereit, deine Electribe-Bibliothek zu verwalten?</h2>
+        <p>Lade den Windows-Build herunter oder klone den Quellcode auf GitHub — kostenlos.</p>
+        <div class="cta-actions">
+          <a class="btn btn-primary" href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/releases/latest">Neueste Version herunterladen</a>
+          <a class="btn btn-secondary" href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager">Quellcode auf GitHub ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/icon-192.png" alt="" width="26" height="26" />
+        Open Electribe Editor
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Projekt</h4>
+          <ul>
+            <li><a href="#features">Funktionen</a></li>
+            <li><a href="#install">Installation</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>GitHub</h4>
+          <ul>
+            <li><a href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager">Repository</a></li>
+            <li><a href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/releases">Releases</a></li>
+            <li><a href="https://github.com/vxdy/Open-Korg-ESX-Sample-Manager/issues">Issues</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sprache</h4>
+          <ul>
+            <li><a href="/">English</a></li>
+            <li><a href="/de/" aria-current="page">Deutsch</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Open Electribe Editor ist ein unabhängiges Community-Projekt — nicht verbunden mit oder unterstützt von Korg.</span>
+      <span>&#8222;Korg&#8220; und &#8222;Electribe&#8220; sind Marken ihrer jeweiligen Inhaber.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
