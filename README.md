@@ -42,9 +42,11 @@ All internal links (nav, CSS/JS/img, favicons) use root-relative paths (`/assets
 
 ## Replacing the screenshot placeholders
 
-There are no real product screenshots yet, so `assets/img/mockup-hero.png`, `mockup-patterns.png` and `mockup-samples.png` are stylized mockups generated to match the tab layout described in the app's README — not actual screenshots. They're clearly labeled as previews on the hero section.
+The `#screens` showcase section now uses real app screenshots (`assets/img/screenshot-*.png`, captured from a running instance loaded with Korg factory data): Pattern Editor, step sequencer, the Keyboard part's piano roll, Sample Editor, Sample tools and the parametric EQ.
 
-To swap in real screenshots:
+The hero section still uses a stylized mockup (`assets/img/mockup-hero.png`), generated to match the tab layout described in the app's README rather than a live screenshot, and is labeled as a preview there. `mockup-patterns.png` / `mockup-samples.png` are no longer referenced from either page and can be deleted, or kept as spares.
+
+To swap in real screenshots (e.g. to replace the hero mockup too):
 
 1. Capture the actual app UI (same dark theme) at roughly the same aspect ratio (hero: 1400×900, showcase: 1200×760 works best, but any size is fine — the CSS scales images to fit).
 2. Replace the files in `assets/img/` with the same filenames, or update the `src`/`width`/`height` attributes in `index.html` and `de/index.html` if you rename them.
